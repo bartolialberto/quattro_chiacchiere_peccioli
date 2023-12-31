@@ -84,74 +84,61 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-/* Define the font family and size for the whole document */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-}
+   body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-/* Define the style for the main heading (H1) */
-h1 {
-  font-size: 36px;
-  color: darkblue;
-  /*text-align: center;*/
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
+    #toc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px; /* Adjust the width as needed */
+      background-color: #f1f1f1;
+      padding: 10px;
+      overflow-y: auto;
+      max-height: 100vh;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
 
-/* Define the style for the subheadings (H2) */
-h2 {
-  font-size: 24px;
-  color: darkblue;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+    #toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-/* Define the style for the paragraphs (P) */
-p {
-  line-height: 1.5;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
+    #toc li {
+      margin-bottom: 5px;
+    }
 
-/* Define the style for the table of contents (TOC) */
-.toc {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Define the style for the TOC items */
-.toc li {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-/* Define the style for the TOC links */
-.toc a {
-  text-decoration: none;
-  color: black;
-}
-
-/* Define the style for the TOC links on hover */
-.toc a:hover {
-  color: blue;
-}
-
-/* Define the style for the page footer */
-.footer {
-  text-align: center;
-  font-size: 12px;
-  color: gray;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
+    #toc li a {
+      text-decoration: none;
+    }
 
     #toc li.h2 {
       margin-left: 20px; /* Adjust the indentation for h2 */
     }
 
+    #content {
+      margin-left: 250px; /* Adjust the margin to match the TOC width */
+      padding: 20px;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #backToTop:hover {
+      background-color: #0056b3;
+    }
 /* ==========================================================================
    Helper classes
    ========================================================================== */

@@ -1,4 +1,4 @@
-
+document.addEventListener('DOMContentLoaded', function() {
   var headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
   // Create a new div element for the TOC
@@ -30,3 +30,9 @@
 
   // Append the TOC to the container
   tocContainer.appendChild(tocList);
+});
+
+// Scroll to Top Function
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
