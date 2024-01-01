@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+function buildTOC() {
+
   var headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
   // Create a new div element for the TOC
@@ -6,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var tocList = document.createElement('ul');
 
   // Iterate through each heading and create TOC items
-  headings.forEach(function(heading, index) {
+  headings.forEach(function (heading, index) {
     var tocItem = document.createElement('li');
     var link = document.createElement('a');
     link.textContent = heading.textContent;
@@ -30,9 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Append the TOC to the container
   tocContainer.appendChild(tocList);
-});
+};
 
-// Scroll to Top Function
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function loadExternalContent(f) {
+  fetch(f)
+    .then(response => response.text())
+    .then(html => {
+      // Inject the loaded HTML into the content container
+      document.getElementById('content').innerHTML = html;
+
+      // After the content is loaded, build the TOC
+      buildTOC();
+    })
+    .catch(error => console.error('Error loading external content:', error));
 }
+
