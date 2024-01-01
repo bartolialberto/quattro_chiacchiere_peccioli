@@ -1,3 +1,4 @@
+function buildTOC() {
 
   var headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
@@ -6,7 +7,7 @@
   var tocList = document.createElement('ul');
 
   // Iterate through each heading and create TOC items
-  headings.forEach(function(heading, index) {
+  headings.forEach(function (heading, index) {
     var tocItem = document.createElement('li');
     var link = document.createElement('a');
     link.textContent = heading.textContent;
@@ -30,3 +31,18 @@
 
   // Append the TOC to the container
   tocContainer.appendChild(tocList);
+};
+
+function loadExternalContent(f) {
+  fetch(f)
+    .then(response => response.text())
+    .then(html => {
+      // Inject the loaded HTML into the content container
+      document.getElementById('content').innerHTML = html;
+
+      // After the content is loaded, build the TOC
+      buildTOC();
+    })
+    .catch(error => console.error('Error loading external content:', error));
+}
+

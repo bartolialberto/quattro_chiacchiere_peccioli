@@ -148,9 +148,9 @@ p {
 }
 
 
-    #toc li.h2 {
-      margin-left: 20px; /* Adjust the indentation for h2 */
-    }
+#toc li.h2 {
+  margin-left: 20px; /* Adjust the indentation for h2 */
+}
 
 /* ==========================================================================
    Helper classes
@@ -240,9 +240,9 @@ p {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
