@@ -56,9 +56,10 @@ function toggleTOC() {
 
 function scrollToSection(sectionId) {
   var targetSection = document.querySelector(sectionId);
+
   if (targetSection) {
     window.scrollTo({
-      top: targetSection.offsetTop - document.getElementById("top-bar").offsetHeight,
+      top: targetSection.offsetTop - document.getElementById("top-bar").offsetHeight - document.getElementById("banner-bar").offsetHeight,
       behavior: "smooth"
     });
   }

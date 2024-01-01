@@ -93,7 +93,7 @@ body {
 /* Define the style for the main heading (H1) */
 h1 {
   font-size: 36px;
-  color: rgb(204,51,0);
+  color: rgb(204, 51, 0);
   /*text-align: center;*/
   margin-top: 20px;
   margin-bottom: 10px;
@@ -102,7 +102,7 @@ h1 {
 /* Define the style for the subheadings (H2) */
 h2 {
   font-size: 24px;
-  color: rgb(204,51,0);
+  color: rgb(204, 51, 0);
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -117,7 +117,8 @@ p {
 #toc {
   display: none;
   padding: 20px;
-  background-color: #f8f8f8;
+  background-color: whitesmoke;
+    color: rgb(204, 51, 0);
   position: fixed;
   top: 40px;
   left: 0;
@@ -131,7 +132,7 @@ p {
   display: block;
   margin-bottom: 10px;
   text-decoration: none;
-  color: #333;
+  color: rgb(204, 51, 0);
 }
 
 /* Define the style for the TOC links on hover */
@@ -153,12 +154,27 @@ p {
   margin-left: 20px; /* Adjust the indentation for h2 */
 }
 
-#top-bar {
-  background-color: #333;
+#banner-bar {
+  background-color: rgb(204, 51, 0);
   color: white;
   padding: 10px;
   position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide any content that may overflow the specified height */
+
+}
+
+#top-bar {
+  background-color: whitesmoke;
+    color: rgb(204, 51, 0);
+  padding: 10px;
+  position: fixed;
+  top: 40px; /* Height of the banner bar */
   left: 0;
   width: 100%;
   z-index: 1000;
