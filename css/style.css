@@ -106,7 +106,7 @@ body {
 }
 
 #top-bar {
-  background-color: darkgray;
+  background-color: lightgray;
   color: rgb(204, 51, 0);
   padding: 10px;
   position: fixed;
