@@ -90,34 +90,43 @@ body {
   font-size: 16px;
 }
 
-/* Define the style for the main heading (H1) */
-h1 {
-  font-size: 36px;
-  color: rgb(204, 51, 0);
-  /*text-align: center;*/
-  margin-top: 20px;
-  margin-bottom: 10px;
+#banner-bar {
+  background-color: rgb(204, 51, 0);
+  color: white;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide any content that may overflow the specified height */
+
 }
 
-/* Define the style for the subheadings (H2) */
-h2 {
-  font-size: 24px;
+#top-bar {
+  background-color: darkgray;
   color: rgb(204, 51, 0);
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding: 10px;
+  position: fixed;
+  top: 40px; /* Height of the banner bar */
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  cursor: pointer;
 }
 
-/* Define the style for the paragraphs (P) */
-p {
-  line-height: 1.5;
-  margin-top: 5px;
-  margin-bottom: 5px;
+#content {
+  margin-top: 100px; /* Adjust this margin to prevent content from being overlapped by the top bar */
+  background: whitesmoke;
 }
 
 #toc {
   display: none;
   padding: 20px;
-  background-color: antiquewhite;
+  background-color: wheat;
   color: rgb(204, 51, 0);
   position: fixed;
   top: 40px;
@@ -140,53 +149,38 @@ p {
   color: blue;
 }
 
-/* Define the style for the page footer */
-.footer {
-  text-align: center;
-  font-size: 12px;
-  color: gray;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-
 #toc li.h2 {
   margin-left: 20px; /* Adjust the indentation for h2 */
 }
 
-#banner-bar {
-  background-color: rgb(204, 51, 0);
-  color: white;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  text-align: center;
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
-  overflow: hidden; /* Hide any content that may overflow the specified height */
-
-}
-
-#top-bar {
-  background-color: whitesmoke;
+/* Define the style for the main heading (H1) */
+h1 {
+  font-size: 36px;
   color: rgb(204, 51, 0);
-  padding: 10px;
-  position: fixed;
-  top: 40px; /* Height of the banner bar */
-  left: 0;
-  width: 100%;
-  z-index: 1000;
   text-align: center;
-  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Define the style for the subheadings (H2) */
+h2 {
+  font-size: 24px;
+  color: rgb(204, 51, 0);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Define the style for the paragraphs (P) */
+p {
+  line-height: 1.5;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 
-#content {
-  margin-top: 80px; /* Adjust this margin to prevent content from being overlapped by the top bar */
-  background: whitesmoke;
-}
+
+
+
 
 /* ==========================================================================
    Helper classes
