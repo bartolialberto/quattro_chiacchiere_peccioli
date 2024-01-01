@@ -17,7 +17,10 @@ function buildTOC() {
       heading.id = 'heading_' + index;
     }
 
-    link.href = '#' + heading.id;
+    // link.href = '#' + heading.id + '\" onclick=\"toggleToc(event)';
+    link.onclick = function () {
+      scrollToSection('#'+heading.id);
+    };
 
     tocItem.appendChild(link);
 
@@ -31,7 +34,7 @@ function buildTOC() {
 
   // Append the TOC to the container
   tocContainer.appendChild(tocList);
-};
+}
 
 function loadExternalContent(f) {
   fetch(f)
@@ -46,3 +49,18 @@ function loadExternalContent(f) {
     .catch(error => console.error('Error loading external content:', error));
 }
 
+function toggleTOC() {
+  var toc = document.getElementById("toc");
+  toc.style.display = (toc.style.display === "none" || toc.style.display === "") ? "block" : "none";
+}
+
+function scrollToSection(sectionId) {
+  var targetSection = document.querySelector(sectionId);
+  if (targetSection) {
+    window.scrollTo({
+      top: targetSection.offsetTop - document.getElementById("top-bar").offsetHeight,
+      behavior: "smooth"
+    });
+  }
+  document.getElementById("toc").style.display = "none";
+}
