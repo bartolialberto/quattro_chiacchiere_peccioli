@@ -1,0 +1,85 @@
+/* Colori del sito originale: rosso mattone rgb(204, 51, 0) */
+
+:root {
+  --peccioli-red: #cc3300;
+  --peccioli-red-light: #e64a19;
+}
+
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: var(--peccioli-red);
+  --md-primary-fg-color--light: var(--peccioli-red-light);
+  --md-primary-fg-color--dark: #992600;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+}
+
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--peccioli-red-light);
+  --md-accent-fg-color--transparent: rgba(230, 74, 25, 0.1);
+  --md-accent-bg-color: #ffffff;
+  --md-accent-bg-color--light: rgba(255, 255, 255, 0.7);
+}
+
+/* Nel tema scuro il rosso pieno è poco leggibile: si schiarisce. */
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  --md-typeset-a-color: #ff7043;
+}
+
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: var(--md-primary-fg-color--dark);
+}
+
+/* Testo del libro: prosa lunga, quindi righe più ariose. */
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.75;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.md-typeset h1 {
+  color: var(--md-primary-fg-color);
+  font-weight: 700;
+  text-align: center;
+  text-wrap: balance;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: #ff7043;
+}
+
+.md-typeset h2,
+.md-typeset h3 {
+  color: var(--md-primary-fg-color);
+}
+
+/* Le poesie e le citazioni in corsivo restano allineate a sinistra. */
+.md-typeset p:has(> em:only-child) {
+  text-align: left;
+}
+
+/* Paragrafi centrati ereditati dal libro (colophon, dediche). */
+.md-typeset .center {
+  text-align: center !important;
+}
+
+/* Le schede della home page non vanno giustificate. */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > ul > li p {
+  text-align: left;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+  }
+}
+
+/* Su schermi stretti il testo giustificato lascia spazi troppo larghi. */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset {
+    text-align: left;
+  }
+}
